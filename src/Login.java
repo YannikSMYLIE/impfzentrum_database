@@ -5,7 +5,7 @@ public class Login extends JFrame {
     private JTextField username;
     private JPasswordField password;
     private JButton connect;
-    private JTextField server;
+    private JTextField ip;
     private JTextField port;
     private JTextField database;
 
@@ -29,7 +29,7 @@ public class Login extends JFrame {
      * @return
      */
     public String[] getData() {
-        String[] returnvalue = {username.getText(), new String(password.getPassword()), server.getText(), port.getText(), database.getText()};
+        String[] returnvalue = {username.getText(), new String(password.getPassword()), ip.getText(), port.getText(), database.getText()};
         return returnvalue;
     }
 }

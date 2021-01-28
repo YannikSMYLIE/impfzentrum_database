@@ -5,22 +5,26 @@ public class WindowsManager {
     private final Login loginWindow;
 
     public WindowsManager() {
+        // Loginfenster erzeugen und anzeigen
         loginWindow = new Login();
         loginWindow.setVisible(true);
 
-
+        /**
+         * ActionListener für Absenden von Login-Daten
+         * Wird ausgelöst, wenn der Button im Formular geklickt wird.
+         */
         loginWindow.getSubmitButton().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Daten einlesen
                 String[] data = loginWindow.getData();
                 String username = data[0];
                 String password = data[1];
-                String server = data[2];
+                String ip = data[2];
                 String port = data[3];
                 String database = data[4];
 
                 // Verbindung herstellen
-                connectToDatabase(username, password, server, Integer.parseInt(port), database);
+                connectToDatabase(username, password, ip, Integer.parseInt(port), database);
             }
         });
     }
@@ -29,20 +33,18 @@ public class WindowsManager {
      * Stellt eine Verbindung mit einer Datenbank her.
      * @param username Der Benutzername des Datenbank-Benutzers.
      * @param password Das Passwort des Datenbank-Benutzers.
-     * @param server Der Server auf der Datenbank-Server liegt.
+     * @param ip Der Server auf der Datenbank-Server liegt.
      * @param port Der Port über den auf den Datenbank-Server zugegriffen werden soll.
      * @param database Der Name der Datenbank welche verwendet werden soll.
      */
-    private void connectToDatabase(String username, String password, String server, int port, String database) {
-        // ToDO: Implementieren
-        DatabaseConnector connector = new DatabaseConnector(server, port, database, username, password);
-
-        if (connector.getErrorMessage() != null) {
-            System.out.println("Es konnte keine Verbindung zur Datenbank hergestellt werden!");
-            System.out.println(connector.getErrorMessage());
-        } else {
-            success(connector);
-        }
+    private void connectToDatabase(String username, String password, String ip, int port, String database) {
+        /**
+         * ToDO: Implementieren
+         * Ergänze den Auftrag so, dass mit Hilfe der Klasse *DatabaseConnector* eine Verbindung mit der Datenbank hergestellt wird.
+         *    Prüfe ob die Verbindung erfolgreich hergestellt wurde:
+         *    * Wurde die Verbindung erfolgreich hergestellt, rufe den Auftrag *success(...)* auf.
+         *    * Wenn ein Fehler auftritt gebe eine Fehlermeldung aus und terminiere das Programm.
+         */
     }
 
     /**

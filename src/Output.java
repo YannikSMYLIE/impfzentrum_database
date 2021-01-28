@@ -1,16 +1,14 @@
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Output extends JFrame {
     private final DatabaseConnector connector;
     private JButton button1;
-    private JButton action2Button;
-    private JButton action3Button;
-    private JButton action4Button;
+    private JButton button2;
+    private JButton button3;
+    private JButton button4;
     private JTable table;
     private JPanel outputPanel;
 
@@ -29,6 +27,9 @@ public class Output extends JFrame {
 
     /**
      * Initialisiert die Aktionen, die bei einem Klick auf einen Button ausgeführt werden sollen.
+     *
+     * ToDo
+     * Implementiere die *actionPerformed()*-Aufträge der jeweiligen Listeners wie unten beschrieben.
      */
     private void initializeActionListener() {
         button1.addActionListener(new ActionListener() {
@@ -37,35 +38,35 @@ public class Output extends JFrame {
              * @param e
              */
             public void actionPerformed(ActionEvent e) {
-                String statement = "SELECT zentrum_bezeichnung, 5-3 FROM kunde";
-                executeStatement(statement);
+                /**
+                 * ToDo
+                 * Ermittelt alle Daten aller Impfzentren und gibt diese in der Tabelle aus.
+                 * Speicher das Statement in einen String und rufe den Auftrag executeStatement() auf.
+                 */
             }
         });
-        action2Button.addActionListener(new ActionListener() {
+        button2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String statement = "SELECT innertable.bezeichnung, (innertable.stoff_amount - innertable.kunden_amount) as rest\n" +
-                "FROM (\n" +
-                "     SELECT impfzentrum.bezeichnung, count(*) as kunden_amount, sum(beliefern.menge) as stoff_amount\n" +
-                "     FROM kunde\n" +
-                "              JOIN impfzentrum ON kunde.zentrum_bezeichnung = impfzentrum.bezeichnung\n" +
-                "              JOIN beliefern on kunde.zentrum_bezeichnung = beliefern.zentrum_bezeichnung\n" +
-                "     GROUP BY impfzentrum.bezeichnung\n" +
-                " ) as innertable\n" +
-                "ORDER BY rest DESC\n" +
-                "LIMIT 1";
-                executeStatement(statement);
+                /**
+                 * ToDo
+                 * Ermittel wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
+                 */
             }
         });
-        action3Button.addActionListener(new ActionListener() {
-            @Override
+        button3.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                /**
+                 * ToDo
+                 * Ergänze deine Anfrage aus *Button2* derart, dass zusätzlich die Summe aller an das jeweilige Impfzentrum gelieferten Impfdosen ausgegeben wird.
+                 */
             }
         });
-        action4Button.addActionListener(new ActionListener() {
-            @Override
+        button4.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                /**
+                 * ToDo
+                 * Ergänze deine Anfrage aus *Button3* derart, dass die Anzahl der noch verfügbaren Impfstoffe pro Impfzentrum sowie der Name des jeweiligen Impfzentrums ausgegeben wird. Nutze deine Anfrage aus *Button3* als Untertabelle.
+                 */
             }
         });
     }
@@ -73,6 +74,11 @@ public class Output extends JFrame {
     /**
      * Führt eine Anfrage aus und überprüft, ob diese ohne Fehler durchgeführt werden konnte.
      * @param statement Das auszuführende Statement.
+     *
+     * ToDo
+     * Führe das als String übergebene Statement aus und lese das *QueryResult* ein.
+     *    * Wenn die Anfrage erfolgreich ausgeführt wurde, rufe den Auftrag *putDataInTable* auf.
+     *    * Wenn ein Fehler aufgetreten ist, gebe eine Fehlermeldung in der Konsole aus aber beende NICHT das Programm.
      */
     private void executeStatement(String statement) {
         // ToDo: Selber implementieren

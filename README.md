@@ -21,8 +21,8 @@ In diesen Klassen müsst ihr Anpassungen vornehmen.
 ### Button1
 Ermittelt alle Daten aller Impfzentren und gibt diese in der Tabelle aus.
 ### Button2
-Ermittel wieviele Kunden pro Impfzentrum geimpft werden sollen.
+Ermittel wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
 ### Button3
 Ergänze deine Anfrage aus *Button2* derart, dass zusätzlich die Summe aller an das jeweilige Impfzentrum gelieferten Impfdosen ausgegeben wird.
 ### Button4
-Ergänze deine Anfrage aus *Button3* derart, dass die Anzahl der noch verfügbaren Impfstoffe pro Impfzentrum ausgegeben wird. Nutze deine Anfrage aus *Button3* als Untertabelle.
+Ergänze deine Anfrage aus *Button3* derart, dass die Anzahl der noch verfügbaren Impfstoffe pro Impfzentrum sowie der Name des jeweiligen Impfzentrums ausgegeben wird. Nutze deine Anfrage aus *Button3* als Untertabelle.
