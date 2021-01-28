@@ -3,7 +3,7 @@ Dieser Programmrahmen stellt dir eine Vorlage für einen Datenbankzugriff mit Hi
 Einige Stellen sind noch nicht implementiert.
 
 ## Anpassung in den Klassen
-In diesen Klassen müsst ihr Anpassungen vornehmen.
+In diesen Klassen musst du Anpassungen vornehmen:
 1. **WindowsManager - connectToDatabase(...)**<br>
    Ergänze den Auftrag so, dass mit Hilfe der Klasse *DatabaseConnector* eine Verbindung mit der Datenbank hergestellt wird.
    Prüfe ob die Verbindung erfolgreich hergestellt wurde:
@@ -19,9 +19,9 @@ In diesen Klassen müsst ihr Anpassungen vornehmen.
    
 ## Anfragen
 ### Button1
-Ermittelt alle Daten aller Impfzentren und gibt diese in der Tabelle aus.
+Ermittle alle Daten aller Impfzentren und gib diese in der Tabelle aus.
 ### Button2
-Ermittel wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
+Ermittle wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
 ### Button3
 Ergänze deine Anfrage aus *Button2* derart, dass zusätzlich die Summe aller an das jeweilige Impfzentrum gelieferten Impfdosen ausgegeben wird.
 ### Button4

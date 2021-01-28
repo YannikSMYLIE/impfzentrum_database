@@ -34,13 +34,13 @@ public class Output extends JFrame {
     private void initializeActionListener() {
         button1.addActionListener(new ActionListener() {
             /**
-             * Ermittelt alle Daten aller Impfzentren und gibt diese in der Tabelle aus.
+             * Ermittle alle Daten aller Impfzentren und gib diese in der Tabelle aus.
              * @param e
              */
             public void actionPerformed(ActionEvent e) {
                 /**
                  * ToDo
-                 * Ermittelt alle Daten aller Impfzentren und gibt diese in der Tabelle aus.
+                 * Ermittle alle Daten aller Impfzentren und gib diese in der Tabelle aus.
                  * Speicher das Statement in einen String und rufe den Auftrag executeStatement() auf.
                  */
             }
@@ -49,7 +49,7 @@ public class Output extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 /**
                  * ToDo
-                 * Ermittel wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
+                 * Ermittle wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
                  */
             }
         });
