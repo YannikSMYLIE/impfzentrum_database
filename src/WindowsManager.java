@@ -3,6 +3,7 @@ import java.awt.event.ActionListener;
 
 public class WindowsManager {
     private final Login loginWindow;
+    private Output outputWindow;
     private DatabaseConnector connector;
 
     public WindowsManager() {
@@ -43,13 +44,8 @@ public class WindowsManager {
             loginWindow.setVisible(false);
 
             // Abfrage Windows starten
-            connector.executeStatement("SELECT * FROM impfzentrum;");
-            QueryResult queryResult = connector.getCurrentQueryResult();
-            String[][] data = queryResult.getData();
-            System.out.println("Ende!");
-
-
-            // TODO!
+            outputWindow = new Output(connector);
+            outputWindow.setVisible(true);
         }
     }
 }
