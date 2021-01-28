@@ -37,22 +37,23 @@ public class Output extends JFrame {
              * @param e
              */
             public void actionPerformed(ActionEvent e) {
-                String statement = "SELECT * FROM kunde";
-                connector.executeStatement(statement);
-                if(connector.getErrorMessage() == null) {
-                    QueryResult queryResult = connector.getCurrentQueryResult();
-                    putDataInTable(queryResult);
-                } else {
-                    System.out.println("Es ist ein Fehler aufgetreten!");
-                    System.out.println(connector.getErrorMessage());
-                }
-
+                String statement = "SELECT zentrum_bezeichnung, 5-3 FROM kunde";
+                executeStatement(statement);
             }
         });
         action2Button.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
-
+                String statement = "SELECT innertable.bezeichnung, (innertable.stoff_amount - innertable.kunden_amount) as rest\n" +
+                "FROM (\n" +
+                "     SELECT impfzentrum.bezeichnung, count(*) as kunden_amount, sum(beliefern.menge) as stoff_amount\n" +
+                "     FROM kunde\n" +
+                "              JOIN impfzentrum ON kunde.zentrum_bezeichnung = impfzentrum.bezeichnung\n" +
+                "              JOIN beliefern on kunde.zentrum_bezeichnung = beliefern.zentrum_bezeichnung\n" +
+                "     GROUP BY impfzentrum.bezeichnung\n" +
+                " ) as innertable\n" +
+                "ORDER BY rest DESC\n" +
+                "LIMIT 1";
+                executeStatement(statement);
             }
         });
         action3Button.addActionListener(new ActionListener() {
@@ -67,6 +68,22 @@ public class Output extends JFrame {
 
             }
         });
+    }
+
+    /**
+     * Führt eine Anfrage aus und überprüft, ob diese ohne Fehler durchgeführt werden konnte.
+     * @param statement Das auszuführende Statement.
+     */
+    private void executeStatement(String statement) {
+        // ToDo: Selber implementieren
+        connector.executeStatement(statement);
+        if(connector.getErrorMessage() == null) {
+            QueryResult queryResult = connector.getCurrentQueryResult();
+            putDataInTable(queryResult);
+        } else {
+            System.out.println("Es ist ein Fehler aufgetreten!");
+            System.out.println(connector.getErrorMessage());
+        }
     }
 
     /**
