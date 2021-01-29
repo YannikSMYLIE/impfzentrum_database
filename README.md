@@ -1,4 +1,4 @@
-#Impfzentrum Database-Connector
+# Impfzentrum Database-Connector
 
 Dieser Programmrahmen stellt dir eine Vorlage für einen Datenbankzugriff mit Hilfe des DatabaseConnectors zur Verfügung.
 Einige Stellen sind noch nicht implementiert.
