@@ -39,33 +39,40 @@ public class Output extends JFrame {
              */
             public void actionPerformed(ActionEvent e) {
                 /**
-                 * ToDo
-                 * Ermittle alle Daten aller Impfzentren und gib diese in der Tabelle aus.
-                 * Speicher das Statement in einen String und rufe den Auftrag executeStatement() auf.
+                 * ToDo: SQL Statement formulieren und mit executeStatement(...) ausführen
                  */
             }
         });
         button2.addActionListener(new ActionListener() {
+            /**
+             * Ermittle wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
+             * @param e
+             */
             public void actionPerformed(ActionEvent e) {
                 /**
-                 * ToDo
-                 * Ermittle wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
+                 * ToDo: SQL Statement formulieren und mit executeStatement(...) ausführen
                  */
             }
         });
         button3.addActionListener(new ActionListener() {
+            /**
+             * Ergänze deine Anfrage aus *Button2* derart, dass zusätzlich die Summe aller an das jeweilige Impfzentrum gelieferten Impfdosen ausgegeben wird.
+             * @param e
+             */
             public void actionPerformed(ActionEvent e) {
                 /**
-                 * ToDo
-                 * Ergänze deine Anfrage aus *Button2* derart, dass zusätzlich die Summe aller an das jeweilige Impfzentrum gelieferten Impfdosen ausgegeben wird.
+                 * ToDo: SQL Statement formulieren und mit executeStatement(...) ausführen
                  */
             }
         });
         button4.addActionListener(new ActionListener() {
+            /**
+             * Ergänze deine Anfrage aus *Button3* derart, dass die Anzahl der noch verfügbaren Impfstoffe pro Impfzentrum sowie der Name des jeweiligen Impfzentrums ausgegeben wird. Nutze deine Anfrage aus *Button3* als Untertabelle.
+             * @param e
+             */
             public void actionPerformed(ActionEvent e) {
                 /**
-                 * ToDo
-                 * Ergänze deine Anfrage aus *Button3* derart, dass die Anzahl der noch verfügbaren Impfstoffe pro Impfzentrum sowie der Name des jeweiligen Impfzentrums ausgegeben wird. Nutze deine Anfrage aus *Button3* als Untertabelle.
+                 * ToDo: SQL Statement formulieren und mit executeStatement(...) ausführen
                  */
             }
         });
@@ -74,22 +81,14 @@ public class Output extends JFrame {
     /**
      * Führt eine Anfrage aus und überprüft, ob diese ohne Fehler durchgeführt werden konnte.
      * @param statement Das auszuführende Statement.
-     *
-     * ToDo
-     * Führe das als String übergebene Statement aus und lese das *QueryResult* ein.
-     *    * Wenn die Anfrage erfolgreich ausgeführt wurde, rufe den Auftrag *putDataInTable* auf.
-     *    * Wenn ein Fehler aufgetreten ist, gebe eine Fehlermeldung in der Konsole aus aber beende NICHT das Programm.
      */
     private void executeStatement(String statement) {
-        // ToDo: Selber implementieren
-        connector.executeStatement(statement);
-        if(connector.getErrorMessage() == null) {
-            QueryResult queryResult = connector.getCurrentQueryResult();
-            putDataInTable(queryResult);
-        } else {
-            System.out.println("Es ist ein Fehler aufgetreten!");
-            System.out.println(connector.getErrorMessage());
-        }
+        /**
+         * ToDo
+         * Führe das als String übergebene Statement aus und lese das *QueryResult* ein.
+         *    * Wenn die Anfrage erfolgreich ausgeführt wurde, rufe den Auftrag *putDataInTable* auf.
+         *    * Wenn ein Fehler aufgetreten ist, gebe eine Fehlermeldung in der Konsole aus aber beende NICHT das Programm.
+         */
     }
 
     /**

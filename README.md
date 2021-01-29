@@ -1,7 +1,8 @@
 # Impfzentrum Database-Connector
 
 Dieser Programmrahmen stellt dir eine Vorlage für einen Datenbankzugriff mit Hilfe des DatabaseConnectors zur Verfügung.
-Einige Stellen sind noch nicht implementiert.
+
+**Einige Stellen sind noch nicht implementiert, diese sollen durch dich implementiert werden. Die Stellen an denen du implementieren sollst sind mit *ToDo* gekennzeichnet. Bitte nimm nur dort Änderungen vor.**
 
 ## Anpassung in den Klassen
 In diesen Klassen musst du Anpassungen vornehmen:
@@ -18,12 +19,8 @@ In diesen Klassen musst du Anpassungen vornehmen:
    Die Klasse enthält vier *ActionListeners*. Diese werden ausgelöst wenn einer der Buttons gedrückt wird.
    Implementiere die *actionPerformed()*-Aufträge der jeweiligen Listeners wie unten beschrieben.
    
-## Anfragen
-### Button1
-Ermittle alle Daten aller Impfzentren und gib diese in der Tabelle aus.
-### Button2
-Ermittle wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
-### Button3
-Ergänze deine Anfrage aus *Button2* derart, dass zusätzlich die Summe aller an das jeweilige Impfzentrum gelieferten Impfdosen ausgegeben wird.
-### Button4
-Ergänze deine Anfrage aus *Button3* derart, dass die Anzahl der noch verfügbaren Impfstoffe pro Impfzentrum sowie der Name des jeweiligen Impfzentrums ausgegeben wird. Nutze deine Anfrage aus *Button3* als Untertabelle.
+## SQL-Anfragen
+* **Button1:**<br>Ermittle alle Daten aller Impfzentren und gib diese in der Tabelle aus.
+* **Button2:**<br>Ermittle wieviele Kunden pro Impfzentrum geimpft werden sollen. Gib die Anzahl der Kunden und den Namen des Impfzentrums aus.
+* **Button3:**<br>Ergänze deine Anfrage aus *Button2* derart, dass zusätzlich die Summe aller an das jeweilige Impfzentrum gelieferten Impfdosen ausgegeben wird.
+* **Button4:**<br>Ergänze deine Anfrage aus *Button3* derart, dass die Anzahl der noch verfügbaren Impfstoffe pro Impfzentrum sowie der Name des jeweiligen Impfzentrums ausgegeben wird. Nutze deine Anfrage aus *Button3* als Untertabelle.
