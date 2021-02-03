@@ -52,14 +52,6 @@ public class WindowsManager {
          *    * Wurde die Verbindung erfolgreich hergestellt, rufe den Auftrag *conntected(...)* auf.
          *    * Wenn ein Fehler auftritt gebe eine Fehlermeldung aus und terminiere das Programm.
          */
-        DatabaseConnector connector = new DatabaseConnector(pIp, pPort, pDatabase, pUsername, pPassword);
-
-        if (connector.getErrorMessage() != null) {
-            System.out.println("Es konnte keine Verbindung zur Datenbank hergestellt werden!");
-            System.out.println(connector.getErrorMessage());
-        } else {
-            conntected(connector);
-        }
     }
 
     /**

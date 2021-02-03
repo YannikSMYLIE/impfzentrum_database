@@ -41,8 +41,6 @@ public class Output extends JFrame {
                 /**
                  * ToDo: SQL Statement formulieren und mit executeStatement(...) ausführen
                  */
-                String statement = "SELECT * FROM impfzentrum;";
-                executeStatement(statement);
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -91,33 +89,5 @@ public class Output extends JFrame {
          *    * Wenn die Anfrage erfolgreich ausgeführt wurde, rufe den Auftrag *putDataInTable* auf.
          *    * Wenn ein Fehler aufgetreten ist, gebe eine Fehlermeldung in der Konsole aus aber beende NICHT das Programm.
          */
-        connector.executeStatement(statement);
-        if(connector.getErrorMessage() == null) {
-            QueryResult queryResult = connector.getCurrentQueryResult();
-
-            // Tabelle zurücksetzen
-            this.table.reset();
-
-            // Anzahl an Spalten ermitteln
-            this.table.setHeader(queryResult.getColumnNames());
-            // Daten einfügen
-            for(int i = 0; i < queryResult.getData().length; i++) {
-                String[] row = queryResult.getData()[i];
-                try {
-                    this.table.addRow(row);
-                } catch (Exception e) {
-                    return;
-                }
-            }
-
-            try {
-                this.table.render();
-            } catch (Exception e) {
-                return;
-            }
-        } else {
-            System.out.println("Es ist ein Fehler aufgetreten!");
-            System.out.println(connector.getErrorMessage());
-        }
     }
 }
