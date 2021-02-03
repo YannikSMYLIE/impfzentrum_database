@@ -1,5 +1,7 @@
+import abitur.DatabaseConnector;
+import abitur.QueryResult;
+
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -9,7 +11,7 @@ public class Output extends JFrame {
     private JButton button2;
     private JButton button3;
     private JButton button4;
-    private JTable table;
+    private Table table;
     private JPanel outputPanel;
 
     public Output(DatabaseConnector pConnector) {
@@ -17,6 +19,7 @@ public class Output extends JFrame {
         add(outputPanel);
         setTitle("Output");
         setSize(400,300);
+        setVisible(true);
 
         // Connector speichern
         this.connector = pConnector;
@@ -27,9 +30,6 @@ public class Output extends JFrame {
 
     /**
      * Initialisiert die Aktionen, die bei einem Klick auf einen Button ausgeführt werden sollen.
-     *
-     * ToDo
-     * Implementiere die *actionPerformed()*-Aufträge der jeweiligen Listeners wie unten beschrieben.
      */
     private void initializeActionListener() {
         button1.addActionListener(new ActionListener() {
@@ -41,6 +41,8 @@ public class Output extends JFrame {
                 /**
                  * ToDo: SQL Statement formulieren und mit executeStatement(...) ausführen
                  */
+                String statement = "SELECT * FROM impfzentrum;";
+                executeStatement(statement);
             }
         });
         button2.addActionListener(new ActionListener() {
@@ -85,18 +87,37 @@ public class Output extends JFrame {
     private void executeStatement(String statement) {
         /**
          * ToDo
-         * Führe das als String übergebene Statement aus und lese das *QueryResult* ein.
+         * Führe das als String übergebene Statement aus und lese das *abitur.QueryResult* ein.
          *    * Wenn die Anfrage erfolgreich ausgeführt wurde, rufe den Auftrag *putDataInTable* auf.
          *    * Wenn ein Fehler aufgetreten ist, gebe eine Fehlermeldung in der Konsole aus aber beende NICHT das Programm.
          */
-    }
+        connector.executeStatement(statement);
+        if(connector.getErrorMessage() == null) {
+            QueryResult queryResult = connector.getCurrentQueryResult();
 
-    /**
-     * Gibt die Daten in einer Tabelle aus.
-     * @param pResult Das QueryResult, dessen Daten ausgegeben werden sollen.
-     */
-    private void putDataInTable(QueryResult pResult) {
-        DefaultTableModel model = (DefaultTableModel) table.getModel();
-        model.setDataVector(pResult.getData(), pResult.getColumnNames());
+            // Tabelle zurücksetzen
+            this.table.reset();
+
+            // Anzahl an Spalten ermitteln
+            this.table.setHeader(queryResult.getColumnNames());
+            // Daten einfügen
+            for(int i = 0; i < queryResult.getData().length; i++) {
+                String[] row = queryResult.getData()[i];
+                try {
+                    this.table.addRow(row);
+                } catch (Exception e) {
+                    return;
+                }
+            }
+
+            try {
+                this.table.render();
+            } catch (Exception e) {
+                return;
+            }
+        } else {
+            System.out.println("Es ist ein Fehler aufgetreten!");
+            System.out.println(connector.getErrorMessage());
+        }
     }
 }

@@ -9,7 +9,7 @@ In diesen Klassen musst du Anpassungen vornehmen:
 1. **WindowsManager - connectToDatabase(...)**<br>
    Ergänze den Auftrag so, dass mit Hilfe der Klasse *DatabaseConnector* eine Verbindung mit der Datenbank hergestellt wird.
    Prüfe ob die Verbindung erfolgreich hergestellt wurde:
-   * Wurde die Verbindung erfolgreich hergestellt, rufe den Auftrag *success(...)* auf.
+   * Wurde die Verbindung erfolgreich hergestellt, rufe den Auftrag *conntected(...)* auf.
    * Wenn ein Fehler auftritt gebe eine Fehlermeldung aus und terminiere das Programm. 
 2. **Output - executeStatement(...)**<br>
    Führe das als String übergebene Statement aus und lese das *QueryResult* ein.

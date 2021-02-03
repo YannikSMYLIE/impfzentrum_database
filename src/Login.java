@@ -14,6 +14,7 @@ public class Login extends JFrame {
         add(loginPanel);
         setTitle("Login");
         setSize(400,300);
+        setVisible(true);
     }
 
     /**
