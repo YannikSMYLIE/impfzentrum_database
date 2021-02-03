@@ -1,5 +1,7 @@
+import abitur.DatabaseConnector;
+import abitur.QueryResult;
+
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -85,7 +87,7 @@ public class Output extends JFrame {
     private void executeStatement(String statement) {
         /**
          * ToDo
-         * Führe das als String übergebene Statement aus und lese das *QueryResult* ein.
+         * Führe das als String übergebene Statement aus und lese das *abitur.QueryResult* ein.
          *    * Wenn die Anfrage erfolgreich ausgeführt wurde, rufe den Auftrag *putDataInTable* auf.
          *    * Wenn ein Fehler aufgetreten ist, gebe eine Fehlermeldung in der Konsole aus aber beende NICHT das Programm.
          */

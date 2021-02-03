@@ -1,3 +1,5 @@
+package abitur;
+
 import java.sql.*;
 
 /**
@@ -5,10 +7,10 @@ import java.sql.*;
  * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2018
  * </p>
  * <p>
- * Klasse DatabaseConnector
+ * Klasse abitur.DatabaseConnector
  * </p>
  * <p>
- * Ein Objekt der Klasse DatabaseConnector ermoeglicht die Abfrage und Manipulation 
+ * Ein Objekt der Klasse abitur.DatabaseConnector ermoeglicht die Abfrage und Manipulation
  * einer MySQL-Datenbank. 
  * Beim Erzeugen des Objekts wird eine Datenbankverbindung aufgebaut, so dass 
  * anschließend SQL-Anweisungen an diese Datenbank gerichtet werden koennen.
@@ -23,7 +25,7 @@ public class DatabaseConnector{
   private String message = null;
 
     /**
-   * Ein Objekt vom Typ DatabaseConnector wird erstellt, und eine Verbindung zur Datenbank 
+   * Ein Objekt vom Typ abitur.DatabaseConnector wird erstellt, und eine Verbindung zur Datenbank
    * wird aufgebaut. Mit den Parametern pIP und pPort werden die IP-Adresse und die 
    * Port-Nummer uebergeben, unter denen die Datenbank mit Namen pDatabase zu erreichen ist. 
    * Mit den Parametern pUsername und pPassword werden Benutzername und Passwort fuer die 
@@ -75,10 +77,10 @@ public class DatabaseConnector{
           resultColumnTypes[i] = resultset.getMetaData().getColumnTypeName(i+1);
         }
 
-        //Queue fuer die Zeilen der Ergebnistabelle erstellen
+        //abitur.Queue fuer die Zeilen der Ergebnistabelle erstellen
         Queue<String[]> rows = new Queue<String[]>();
 
-        //Daten in Queue uebertragen und Zeilen zaehlen
+        //Daten in abitur.Queue uebertragen und Zeilen zaehlen
         int rowCount = 0;
         while (resultset.next()){
           String[] resultrow =  new String[columnCount];
@@ -89,7 +91,7 @@ public class DatabaseConnector{
           rowCount = rowCount + 1;
         }
 
-        //Ergebnisfeld erstellen und Zeilen aus Queue uebertragen
+        //Ergebnisfeld erstellen und Zeilen aus abitur.Queue uebertragen
         String[][] resultData = new String[rowCount][columnCount];
         int j = 0;
         while (!rows.isEmpty()){
@@ -115,7 +117,7 @@ public class DatabaseConnector{
 
   /**
    * Die Anfrage liefert das Ergebnis des letzten mit der Methode executeStatement an 
-   * die Datenbank geschickten SQL-Befehls als Ob-jekt vom Typ QueryResult zurueck.
+   * die Datenbank geschickten SQL-Befehls als Ob-jekt vom Typ abitur.QueryResult zurueck.
    * Wurde bisher kein SQL-Befehl abgeschickt oder ergab der letzte Aufruf von 
    * executeStatement keine Ergebnismenge (z.B. bei einem INSERT-Befehl oder einem 
    * Syntaxfehler), so wird null geliefert.  

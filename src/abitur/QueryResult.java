@@ -1,13 +1,15 @@
+package abitur;
+
 /**
  * <p>
  * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2018.
  * </p>
  * <p>
- * Klasse QueryResult
+ * Klasse abitur.QueryResult
  * </p>
  * <p>
- * Ein Objekt der Klasse QueryResult stellt die Ergebnistabelle einer Datenbankanfrage mit Hilfe 
- * der Klasse DatabaseConnector dar. Objekte dieser Klasse werden nur von der Klasse DatabaseConnector erstellt. 
+ * Ein Objekt der Klasse abitur.QueryResult stellt die Ergebnistabelle einer Datenbankanfrage mit Hilfe
+ * der Klasse abitur.DatabaseConnector dar. Objekte dieser Klasse werden nur von der Klasse abitur.DatabaseConnector erstellt.
  * Die Klasse verfuegt ueber keinen oeffentlichen Konstruktor.
  * </p>
  * 

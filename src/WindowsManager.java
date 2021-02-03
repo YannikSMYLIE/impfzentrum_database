@@ -1,3 +1,5 @@
+import abitur.DatabaseConnector;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -45,7 +47,7 @@ public class WindowsManager {
     private void connectToDatabase(String pIp, int pPort, String pDatabase, String pUsername, String pPassword) {
         /**
          * ToDO: Implementieren
-         * Ergänze den Auftrag so, dass mit Hilfe der Klasse *DatabaseConnector* eine Verbindung mit der Datenbank hergestellt wird.
+         * Ergänze den Auftrag so, dass mit Hilfe der Klasse *abitur.DatabaseConnector* eine Verbindung mit der Datenbank hergestellt wird.
          *    Prüfe ob die Verbindung erfolgreich hergestellt wurde:
          *    * Wurde die Verbindung erfolgreich hergestellt, rufe den Auftrag *conntected(...)* auf.
          *    * Wenn ein Fehler auftritt gebe eine Fehlermeldung aus und terminiere das Programm.
@@ -62,7 +64,7 @@ public class WindowsManager {
 
     /**
      * Wird aufgerufen wenn die Verbindung mit der Datenbank erfolgreich hergestellt wurde.
-     * @param pConnector Der DatabaseConnector welcher mit der Datenbank verbunden ist.
+     * @param pConnector Der abitur.DatabaseConnector welcher mit der Datenbank verbunden ist.
      */
     private void conntected(DatabaseConnector pConnector) {
         // Loginfenster ausblenden
